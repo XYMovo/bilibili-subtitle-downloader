@@ -176,6 +176,12 @@
 |---|--------|---------|--------|------|
 | P3-Fix | **导出格式快速选择器** | 在 table-actions 上方添加 `#quickFormatSelect` 原生下拉框（TXT/SRT/MD/DOCX），与设置弹窗格式选择器双向同步，用户无需打开设置即可切换导出格式 | 🔴 紧急 | ✅ |
 
+### P1 遗留修复
+
+| # | 修复项 | 实现方式 | 优先级 | 状态 |
+|---|--------|---------|--------|------|
+| P1-4 Fix | **字幕重试指数退避（补全）** | P1-4 此前只在 `getBilibiliSubtitleContentByTrack` 一处实现了退避（且公式 `(3-s)` 错误），现补全 `getBilibiliSubtitle`(2处)、`getBilibiliSubtitleTracks`(1处)、`fetchSubtitleWithAid`(2处) 的退避，公式统一为 `(param+1)*1e3`（3s/2s/1s 逐步退避） | ⭐⭐ | ✅ |
+
 ### 可用性 (Usability)
 
 | # | 改进项 | 实现方式 | 优先级 | 状态 |
