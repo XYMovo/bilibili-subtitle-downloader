@@ -1,0 +1,9 @@
+{
+  "name": "com.subbatch.qwen3",
+  "description": "SubBatch Qwen3 transcription service",
+  "path": "qwen3_server.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://__EXTENSION_ID__/"
+  ]
+}
