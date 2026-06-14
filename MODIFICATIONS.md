@@ -181,6 +181,7 @@
 | # | 修复项 | 实现方式 | 优先级 | 状态 |
 |---|--------|---------|--------|------|
 | P1-4 Fix | **字幕重试指数退避（补全）** | P1-4 此前只在 `getBilibiliSubtitleContentByTrack` 一处实现了退避（且公式 `(3-s)` 错误），现补全 `getBilibiliSubtitle`(2处)、`getBilibiliSubtitleTracks`(1处)、`fetchSubtitleWithAid`(2处) 的退避，公式统一为 `(param+1)*1e3`（3s/2s/1s 逐步退避） | ⭐⭐ | ✅ |
+| P0-Fix | **突破 64MB 消息限制** | 长视频音频解码失败需前端处理时，全量 `Array.from(audioData)` 超过 Chrome 的 64MB postMessage 限制。新增 `pendingAudioBuffers` Map 暂存缓冲区（5分钟自动清理），`getAudioDataChunk` 消息按 4MB 分块传输，sidepanel 接受分块后重构完整数组再解码 | 🔴 紧急 | ✅ |
 
 ### 可用性 (Usability)
 
